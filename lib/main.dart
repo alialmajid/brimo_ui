@@ -47,7 +47,62 @@ class BrimoHomePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          
+          Stack(
+            children: [
+              Container(
+                height: 120,
+                color: const Color(0xFF00529C),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20, left: 16, right: 16),
+                child: Container(
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color:  Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Selamat Datang",
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                      const SizedBox(height: 4),
+                      const Text(
+                        "Ali Al Majid",
+                        style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Divider(height: 30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text("Saldo Rekening", style: TextStyle(color: Colors.grey)),
+                              SizedBox(height: 4),
+                              Text("Rp 15.000.000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                            ],
+                          ),
+                          const Icon(Icons.visibility_off, color: Colors.grey),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
