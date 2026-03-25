@@ -103,6 +103,43 @@ class BrimoHomePage extends StatelessWidget {
               ),
             ],
           ),
+
+          const SizedBox(height: 20),
+          
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text("Menu Umum", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          ),
+          const SizedBox(height: 10),
+          Container(
+            height: 200,
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                List<IconData> icons = [Icons.send, Icons.payment, Icons.qr_code, Icons.phone_android, Icons.account_balance_wallet, Icons.water_drop, Icons.bolt, Icons.more_horiz];
+                List<String> labels = ["Transfer", "BIRVA", "QRIS", "Pulsa", "Ddompet", "PDAM", "Listrik", "Lainnya"];
+
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.blue[50],
+                      child: Icon(icons[index], color: const Color(0xFF00529C)),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(labels[index], style: const TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                  ],
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
