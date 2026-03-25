@@ -91,7 +91,7 @@ class BrimoHomePage extends StatelessWidget {
                             children: const [
                               Text("Saldo Rekening", style: TextStyle(color: Colors.grey)),
                               SizedBox(height: 4),
-                              Text("Rp 15.000.000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                              Text("Rp 15.000.000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
                             ],
                           ),
                           const Icon(Icons.visibility_off, color: Colors.grey),
@@ -136,6 +136,31 @@ class BrimoHomePage extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(labels[index], style: const TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
                   ],
+                );
+              },
+            ),
+          ),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text("Mutasi Terakhir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          ),
+          const SizedBox(height: 10),
+          Container(
+            height: 250,
+            color: Colors.white,
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.green[50],
+                    child: const Icon(Icons.arrow_downward, color: Colors.green),
+                  ),
+                  title: Text("Transfer Masuk ${index + 1}"),
+                  subtitle: const Text("12 Okt 2025 - 14:30"),
+                  trailing: const Text("+ Rp 500.000", style: TextStyle(Colors.green, fontWeight: FontWeight.bold)),
                 );
               },
             ),
