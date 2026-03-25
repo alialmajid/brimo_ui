@@ -108,7 +108,7 @@ class BrimoHomePage extends StatelessWidget {
           
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text("Menu Umum", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            child: Text("Menu Umum", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
           ),
           const SizedBox(height: 10),
           Container(
@@ -143,7 +143,7 @@ class BrimoHomePage extends StatelessWidget {
 
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text("Mutasi Terakhir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            child: Text("Mutasi Terakhir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
           ),
           const SizedBox(height: 10),
           Container(
@@ -158,11 +158,33 @@ class BrimoHomePage extends StatelessWidget {
                     backgroundColor: Colors.green[50],
                     child: const Icon(Icons.arrow_downward, color: Colors.green),
                   ),
-                  title: Text("Transfer Masuk ${index + 1}"),
+                  title: Text("Transfer Masuk ${index + 1}", style: TextStyle(fontSize: 18),),
                   subtitle: const Text("12 Okt 2025 - 14:30"),
-                  trailing: const Text("+ Rp 500.000", style: TextStyle(Colors.green, fontWeight: FontWeight.bold)),
+                  trailing: const Text("+ Rp 500.000", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 16)),
                 );
               },
+            ),
+          ),
+
+          const SizedBox(height: 2),
+
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF00529C),
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                    ),
+                    onPressed: () {
+                      print("Buka Catatan Keuangan!");
+                    },
+                    child: const Text("Catatan Keuangan", style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
